@@ -25,6 +25,11 @@ export default function TextForm({ mode, heading }) {
     showAlert("Converted to lowercase", "success");
   };
 
+  const handleCopy = () => {
+  navigator.clipboard.writeText(text);
+  showAlert("Text copied to clipboard", "success");
+};
+
   const handleClear = () => {
     setText("");
     showAlert("Text cleared", "danger");
@@ -87,6 +92,10 @@ export default function TextForm({ mode, heading }) {
       >
         Lowercase
       </button>
+
+      <button className="btn btn-success mx-2" onClick={handleCopy}>
+  Copy Text
+</button>
 
       <button
         className="btn btn-danger mx-2"
